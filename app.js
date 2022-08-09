@@ -5,7 +5,11 @@ const server = http.createServer(app)
 // websocket imports
 const { Server } = require('socket.io')
 // const io = new Server(server)
-const io = require('socket.io')(server, { cors: {origin: '*'}});
+const io = new Server(server, {
+    cors: {
+      origin: "*"
+    }
+  })
 
 // cors config
 const cors = require('cors')
