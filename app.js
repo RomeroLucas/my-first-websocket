@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
 
 
 
-let port = 4000
+let port = procces.env.PORT || 4000
 server.listen(port, () => {
     console.log(`Listening on: http://localhost:${port}`)
 })
