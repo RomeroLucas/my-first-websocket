@@ -4,12 +4,12 @@ const http = require('http')
 const server = http.createServer(app)
 // websocket imports
 const { Server } = require('socket.io')
-const io = new Server(server)
+// const io = new Server(server)
+const io = require('socket.io')(server, { origins: '*:*'});
 
 // cors config
 const cors = require('cors')
 app.use(cors())
-io.set('origins', '*:*')
 
 app.get('/', (req, res, next) => {
     res.sendFile(__dirname + "/public/index.html")
