@@ -9,6 +9,7 @@ const io = new Server(server)
 // cors config
 const cors = require('cors')
 app.use(cors())
+io.set('origins', '*:*')
 
 app.get('/', (req, res, next) => {
     res.sendFile(__dirname + "/public/index.html")
