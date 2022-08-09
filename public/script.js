@@ -1,6 +1,6 @@
 // socket connection client side
 var socket = io();
-socket.emit('entrou')
+socket.emit('entrou', prompt())
 
 socket.on('hi', (res) => {
   var item = document.createElement('li');
