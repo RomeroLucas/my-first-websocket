@@ -6,6 +6,10 @@ const server = http.createServer(app)
 const { Server } = require('socket.io')
 const io = new Server(server)
 
+// cors config
+const cors = require('cors')
+app.use(cors())
+
 app.get('/', (req, res, next) => {
     res.sendFile(__dirname + "/public/index.html")
 })
